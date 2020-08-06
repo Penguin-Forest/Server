@@ -17,7 +17,7 @@ public class Main
         final SocketIOServer server = new SocketIOServer(config);
         server.addEventListener("chatevent", ChatObject.class, (client, data, ackRequest) -> {
             server.getBroadcastOperations().sendEvent("chatevent", data);
-            System.out.println(data.getMessage());
+            System.out.println(data.getMessage()); // Prints the data you are sent
         });
 
         server.start();
